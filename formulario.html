@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="css/formulario.css">
+  <link rel="stylesheet" href="./css/navBar.css">
+  <title>Formulario Registro</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="container1">
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-button">Inicio</a></li>
+                <li><a href="acerca.html" class="nav-button">Acerca de</a></li>
+                <li><a href="lugaresturisticos.html" class="nav-button">Lugares turísticos</a></li>
+                <li><a href="comidatipica.html" class="nav-button">Comida típica</a></li>
+                <li><a href="creador.html" class="nav-button">Contacto del creador</a></li>
+                <li><a href="formulario.html" class="nav-button">Formulario de registro</a></li>
+                <li class="nav-dropdown">
+                    <a href="#" class="nav-button">Extras</a>
+                    <ul class="dropdown-content">
+                        <li><a href="./videos.html">Videos</a></li>
+                        <li><a href="#">Admin</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+  <section class="form-register">
+    <h4>Formulario Registro</h4>
+    <input class="controls" type="text" name="nombres" id="nombres" placeholder="Ingrese su Nombre">
+    <input class="controls" type="text" name="apellidos" id="apellidos" placeholder="Ingrese su Apellido">
+    <input class="controls" type="email" name="correo" id="correo" placeholder="Ingrese su Correo">
+    <select class="controls" name="paquete" id="paquete">
+      <option value="" disabled selected>Seleccione un Paquete</option>
+      <option value="basico">Paquete Básico</option>
+      <option value="premium">Paquete Premium</option>
+      <option value="lujo">Paquete de Lujo</option>
+    </select>
+    <select class="controls" name="metodoPago" id="metodoPago">
+      <option value="" disabled selected>Seleccione Método de Pago</option>
+      <option value="visa">Visa</option>
+      <option value="mastercard">Mastercard</option>
+    </select>
+    <label class="checkbox-label">
+      <input type="checkbox" id="terminosCheckbox"> Acepto los <a href="#">Términos y Condiciones</a>
+    </label>
+    <p id="errorMensaje" style="display: none; color: red;">Debe aceptar los términos y condiciones.</p>
+    <input class="botons" type="submit" value="Registrar" id="submitBtn">
+  </section>
+
+  <script>
+    document.getElementById('submitBtn').addEventListener('click', function(event) {
+      if (!document.getElementById('terminosCheckbox').checked) {
+        event.preventDefault();
+        document.getElementById('errorMensaje').style.display = 'block';
+      } else {
+        document.getElementById('errorMensaje').style.display = 'none';
+      }
+    });
+  </script>
+</body>
+</html>
